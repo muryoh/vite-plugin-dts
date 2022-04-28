@@ -2,21 +2,23 @@ import { resolve } from 'path'
 import { existsSync, readdirSync, lstatSync, rmdirSync, unlinkSync } from 'fs'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import { dtsPlugin } from '../src/plugin'
+import { dtsPlugin } from './src/plugin'
 
-emptyDir(resolve(__dirname, 'types'))
+const root = resolve('./example')
+emptyDir(resolve(root, 'types'))
 
 export default defineConfig({
+  root,
   resolve: {
     // alias: [{ find: /^@\/(.+)/, replacement: resolve(__dirname, '$1') }]
     alias: {
-      '@': resolve(__dirname),
-      '@components': resolve(__dirname, 'src/components')
+      '@': resolve(root),
+      '@components': resolve(root, 'src/components')
     }
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/index.ts'),
+      entry: resolve(root, 'src/index.ts'),
       name: 'Test',
       formats: ['es'],
       fileName: 'test'
