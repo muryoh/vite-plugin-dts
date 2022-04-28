@@ -68,7 +68,7 @@
   "license": "MIT",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
-  "name": "vite-plugin-dts",
+  "name": "@divriots/vite-plugin-dts",
   "peerDependencies": {
     "vite": ">=2.4.4"
   },
@@ -93,5 +93,5 @@
     "test:e2e": "cd example && cross-env DEBUG=\"vite-plugin-dts:bundle\" vite build"
   },
   "types": "dist/index.d.ts",
-  "version": "1.1.1"
+  "version": "1.1.1-divRIOTS.0"
 }
